@@ -1,7 +1,7 @@
 import requests, re, os
 from bs4 import BeautifulSoup as bs
 
-url = 'https://kinogo-net.la/'
+# url = 'https://kinogo-net.la/'
 
 # # Loading the page.
 # r = requests.get(url)
@@ -31,19 +31,39 @@ url = 'https://kinogo-net.la/'
 #     print("*"*9+"\n")
 
 #
-# updates.
+url = 'https://kinogo-net.la'
+
 res = requests.get(url)
 res.raise_for_status()
 
+os.makedirs('movie_pics', exist_ok=True)
+
 soup = bs(res.text, 'html.parser')
-data = soup.select('.msupdate_block_list_item')
+data = soup.select('a.kino-img img-box')
 
-for item in data:
-    season = ''.join(re.findall(r'\d{,2}\sсезон', str(item))) # Достал сезон
-    print('\n' + item.img.get('alt').strip()) # Название
-    print(season) # Сезон
-    print(item.span.getText()) # Серия и озвучки.
-    print('https://kinogo-net.la' + item.a['href']) # Ссылка.
-    print('*'*10)
+print(len(data))
 
 
+
+
+# url = 'https://kinogo-net.la/'
+# res = requests.get(url)
+# res.raise_for_status()
+#
+# soup = bs(res.text, 'html.parser')
+# data = soup.select('div.msupdate_block_list_item_inner')
+#
+# resp = input("Enter the name or enter 'a' to see all update.\n: ")
+# # what need.
+# if len(resp) > 1:
+#     for item in data:
+#         info = ''.join(re.sub(r'(\s)(\s+)', r'\1', item.getText()))
+#         if resp.title() in info:
+#             print("*"*10)
+#             print(info)
+#             print("*"*10)
+# else:
+#     # all updates.
+#     for item in data:
+#         print(''.join(re.sub(r'(\s)(\s+)', r'\1', item.getText())))
+#         print('*'*10)

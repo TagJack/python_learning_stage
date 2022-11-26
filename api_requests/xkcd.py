@@ -1,9 +1,9 @@
 #! Программа загружает все комиксы XKCD
 
-# import requests, os
-# from bs4 import BeautifulSoup as bs
-#
-# url = 'https://xkcd.ru/'
+import requests, os
+from bs4 import BeautifulSoup as bs
+
+url = 'https://xkcd.ru'
 # os.makedirs('xkcd', exist_ok=True) # exist_ok=True Если уже есть папка то работает с ней
 # i = 5
 #

@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from random_walk2 nimport RandomWalk
+from random_walk2 import RandomWalk
 
 while True:
     # Построение случайного блуждания и нанесение точек на диаграмму.

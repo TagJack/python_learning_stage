@@ -1,6 +1,8 @@
 import random
 import decimal
 
+
+
 # ### Конкатенация с перебором.
 # ints = [2, 4, 8, 4, 6, 1]
 #
@@ -14,6 +16,7 @@ import decimal
 #
 # fun(ints, 8)
 
+
 # ##Селекционная сортировка.
 # def selection_sort(arr):
 #     indexing_length = range(0, len(arr))
@@ -26,12 +29,11 @@ import decimal
 #
 #     return arr
 #
-# n = 100
-# list_a = []
-# for i in range(0, n):
-#     list_a.append(randint(1, 99))
-# print(list_a)
-# print(selection_sort(list_a))
+
+# ints = list(range(10))
+# random.shuffle(ints)
+# print(selection_sort(ints))
+
 
 # ### Метод поиска значения в не сортированном массиве.
 # def binary_search(sequence, item):
@@ -45,8 +47,11 @@ import decimal
 #         elif item > mid_value: begin = midpoint + 1
 #     return None
 #
+
+
 # arr = list(range(0,15))
 # print(binary_search(arr, 8))
+
 
 # """Есть N коробок, некий человек последовательно проходит и закрывает
 # куждую вторую коробку. Затем снова проходит уже по каждой третьей коробку
@@ -69,7 +74,7 @@ import decimal
 
 
 ## Алгоритм выявления самого повторяемого слова и самого длинного слова в предложении.
-# text = 'this is random text in random place with random words nothing has sense here.'
+text = 'this is random text in random place with random words nothing has sense here.'
 
 # def solution(text):
 #     t_dict = {}
@@ -80,6 +85,7 @@ import decimal
 #     return max(t_dict, key=t_dict.get), longest
 #
 # print(solution(text))
+
 
 # def solution(n):
 #     numbers = list(range(n))
@@ -99,18 +105,21 @@ import decimal
 # def float_range(start, stop, step):
 #     while start < stop:
 #         yield float(start)
+#         print(start)
 #         start += decimal.Decimal(step)
 # #
 #     return start
-# #
+# # #
 # arr = list(float_range(1, 6, 1.5))
-# print(arr)
 # print(list(float_range(1, 10, '0.5')))
+
+
 
 ## Разварачивает строку
 # text = 'this is random text in random place with random words nothing has sense here.'
 # def reverse(text):
 #     return text[::-1].lower()
+
 
 text = 'this is random text in random place with random words nothing has sense in here.'
 
@@ -125,6 +134,7 @@ text = 'this is random text in random place with random words nothing has sense 
 # print(solution(text))
 
 
+
 # def qsort(arr):
 #     if len(arr) < 2:
 #         return arr
@@ -134,17 +144,3 @@ text = 'this is random text in random place with random words nothing has sense 
 #         greater = [i for i in arr[1:] if i > pivot]
 #         return qsort(less)+[pivot]+qsort(greater)
 
-
-def qsort(arr):
-    if len(arr) < 2:
-        return arr
-    else:
-        pivot = arr[0]
-        less = [i for i in arr[1:] if i <= pivot]
-        more = [i for i in arr[1:] if i >= pivot]
-        return qsort(less)+[pivot]+qsort(more)
-
-arr = list(range(10, 1000, 10))
-random.shuffle(arr)
-print(arr)
-print(qsort(arr))
