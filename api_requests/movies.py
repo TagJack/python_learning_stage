@@ -43,8 +43,7 @@ data = soup.select('a.kino-img img-box')
 
 print(len(data))
 
-
-
+git@github.com:TagJack/python_learning_stage.git
 
 # url = 'https://kinogo-net.la/'
 # res = requests.get(url)
