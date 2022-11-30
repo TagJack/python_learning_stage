@@ -434,3 +434,21 @@ string = 'MyVar17 = OtherVar + YetAnother2Var TheAnswerToLifeTheUniverseAndEvery
 # YES: (boo1@ya.ru), boo2@ya.ru!, boo3@ya.ru"""
 #
 # print(re.findall(r'(?<![\+-.])[a-z]+?\d?[\'._+-]?[a-z]+?\d?[\'._+-]?[a-z]+\d?@[a-z]+[\'._+-]?[a-z]*?\.[a-z][a-z][a-z]?(?![\+])', examp2))
+
+
+## Snail sort.
+# array = [[1,3,4,5],
+#          [6,7,8,9],
+#          [1,2,3,4],
+#          [2,3,4,5]]
+#
+# def solution(arr):
+#     res = []
+#     while len(arr) > 1:
+#         res = res + arr.pop(0)
+#         res = res + [row.pop(-1) for row in arr]
+#         res = res + list(reversed(arr.pop(-1)))
+#         res = res + [row.pop(0) for row in arr[::-1]]
+#     return res if not arr else res + arr(0)
+#
+# print(solution(array))
