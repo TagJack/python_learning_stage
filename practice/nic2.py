@@ -437,10 +437,10 @@ string = 'MyVar17 = OtherVar + YetAnother2Var TheAnswerToLifeTheUniverseAndEvery
 
 
 ## Snail sort.
-# array = [[1,3,4,5],
-#          [6,7,8,9],
-#          [1,2,3,4],
-#          [2,3,4,5]]
+array = [[1,3,4,5],
+         [6,7,8,9],
+         [1,2,3,4],
+         [2,3,4,5]]
 #
 # def solution(arr):
 #     res = []
@@ -452,3 +452,17 @@ string = 'MyVar17 = OtherVar + YetAnother2Var TheAnswerToLifeTheUniverseAndEvery
 #     return res if not arr else res + arr(0)
 #
 # print(solution(array))
+
+def snail(arr):
+    if arr:
+        top_row = list(arr.pop(0))
+        rotate_row = list(zip(*[row[::-1] for row in arr]))
+        return top_row + snail(rotate_row)
+    return []
+
+print(snail(array))
+
+######
+# print(sum(map(int,str(n)))) # И перебирает и складывает.
+# num = sum(int(i) for i in str(n)) # Отдельный перевод и складывание.
+

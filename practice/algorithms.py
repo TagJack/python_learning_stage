@@ -54,7 +54,7 @@ import decimal
 
 
 # """Есть N коробок, некий человек последовательно проходит и закрывает
-# куждую вторую коробку. Затем снова проходит уже по каждой третьей коробку
+# куждую вторую коробку. Затем снова проходит уже по каждой третьей коробкe
 # и , если она открыта - закрывает, если уже закрыта - открывает. Потом
 # повторяет цикл по каждой 4-ой и так до N."""
 # def f(n):
@@ -135,12 +135,36 @@ text = 'this is random text in random place with random words nothing has sense 
 
 
 
-# def qsort(arr):
-#     if len(arr) < 2:
-#         return arr
-#     else:
-#         pivot = arr[0]
-#         less = [i for i in arr[1:] if i <= pivot]
-#         greater = [i for i in arr[1:] if i > pivot]
-#         return qsort(less)+[pivot]+qsort(greater)
+def qsort(arr):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [i for i in arr[1:] if i <= pivot]
+        greater = [i for i in arr[1:] if i > pivot]
+        return qsort(less)+[pivot]+qsort(greater)
 
+array = list(range(1000))
+random.shuffle(array)
+print(qsort(array))
+
+######
+# def find_smallest(arr):
+#     smallest = arr[0]
+#     smallest_ind = 0
+#     for i in range(1, len(arr)):
+#         if arr[i] < smallest:
+#             smallest = arr[i]
+#             smallest_ind = i
+#     return smallest_ind
+#
+# def selection_sort(arr):
+#     new_arr = []
+#     for i in range(len(arr)):
+#         smallest = find_smallest(arr)
+#         new_arr.append(arr.pop(smallest))
+#     return new_arr
+#
+# nums = list(range(1, 10))
+# random.shuffle(nums)
+# print(nums)
